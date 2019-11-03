@@ -11,11 +11,11 @@ const data = {
 };
 
 const isAnimal = R.propEq('type', 'animal');
-const hasFourLegs = R.pathEq(['bodyParts', 'legs'], 4);
+const hasTwoLegs = R.pathEq(['bodyParts', 'legs'], 2);
 const specieIs = R.propEq('specie');
 
-const isQuadrupede = R.both(isAnimal, hasFourLegs);
+const isBird = R.both(isAnimal, hasTwoLegs);
 const isEagleOrParrot = R.either(specieIs('eagle'), specieIs('parrot'));
 
-const isValidAnimal = R.either(isQuadrupede, isEagleOrParrot);
+const isValidAnimal = R.either(isBird, isEagleOrParrot);
 console.log(isValidAnimal(data));
