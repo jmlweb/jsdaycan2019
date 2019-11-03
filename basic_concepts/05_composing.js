@@ -1,10 +1,7 @@
 const mapToDouble = arr => arr.map(x => x * 2);
 const mapToObj = arr => arr.map(value => ({ value }));
 const sumAll = arr => arr.reduce((acc, curr) => acc + curr.value, 0);
-const compose = (...fns) => x => {
-  const reversedFn = fns.reverse();
-  return reversedFn.reduce((acc, curr) => curr(acc), x);
-};
+const compose = (...fns) => x => fns.reduceRight((acc, curr) => curr(acc), x);
 
 const originalArr = [2, 4, 2];
 
