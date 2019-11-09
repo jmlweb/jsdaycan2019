@@ -1,6 +1,7 @@
 let myVar = 0;
 
-const myFunc = (day, myArg) => (day % 2 ? (myArg += 1) : (myArg -= 1));
+const myFunc = (day, currentVal) =>
+  day % 2 ? (currentVal += 1) : (currentVal -= 1);
 
 const myDate = new Date();
 const myDay = myDate.getDate();
